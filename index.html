@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link type="text/css" href="styles.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+    <script>
+      // Firebase-Config
+      var firebaseConfig = {
+        apiKey: "AIzaSyBsRL3Qh7D4fBWE2aB7srtbAAoXNU3vdO8",
+        authDomain: "game-vinculacion.firebaseapp.com",
+        projectId: "game-vinculacion",
+        storageBucket: "game-vinculacion.appspot.com",
+        messagingSenderId: "510342140091",
+        appId: "1:510342140091:web:b1f2cc4640bc81bad4199e",
+        measurementId: "G-MN7CC326DJ",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <title>Master Shooting Ball</title>
+  </head>
+  <body>
+    <div id="Login">
+      <div class="fixed text-white text-sm ml-2 mt-1 select-none">
+        <span>Usuario: </span><span id="nombreUsuario">Invitado</span>
+        <br />
+        <span>Score: </span><span id="scoreElement">0</span>
+      </div>
+      <div
+        id="container"
+        class="fixed inset-0 flex items-center justify-center"
+      >
+        <div class="bg-white max-w-md w-full p-6 text-center">
+          <div id="title">
+            <h1 class="font-mono font-bold text-3xl mb-5">Master Shooter Ball</h1>
+          </div>
+          <div id ="displayPuntaje">
+            <h1
+              id="scoreTotal"
+              class="text-4xl font-bold leading-none select-none"
+            >
+              0
+            </h1>
+            <p id="points" class="text-sm text-gray-700 mb-2 select-none">Points</p>
+          </div>
+          <div class="mb-5">
+            <div class="table w-full">
+              <div id="listadoPuntuaciones" class="table-row-group">
+              </div>
+            </div>
+          </div>
+            <button
+              id="btnStartGame"
+              class="bg-blue-500 text-white w-full py-3 rounded-full mb-2"
+            >
+              Comenzar el juego
+            </button>
+            <p id="txtMensaje"></p>
+            <button
+              id="btnSesion"
+              class="bg-red-700 text-white w-full py-3 rounded-full"
+            >
+              Cerrar Sesión
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <canvas id="canvas"></canvas>
+    <!-- Librería para efectos de disminución de tamaño -->
+    <script src="firebase.js"></script>
+    <script src="index.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"
+      integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!--  -->
+  </body>
+</html>

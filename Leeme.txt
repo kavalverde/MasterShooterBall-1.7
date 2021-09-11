@@ -1,0 +1,2 @@
+Debido al uso de Firebase, para que se pueda acceder correctamente al
+juego es necesario que esté montado en un live server
